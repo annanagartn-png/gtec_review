@@ -17,6 +17,13 @@
 .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:0;border-radius:12px;padding:14px 18px;font:inherit;font-weight:750;cursor:pointer;text-decoration:none;min-height:48px}.primary{background:var(--blue);color:white;box-shadow:0 6px 14px #155eef24}.primary:hover{background:#004ee8}.secondary{background:#eef4ff;color:#1849a9}.ghost{background:white;color:var(--ink);border:1px solid var(--line)}.btn-row{display:flex;gap:10px;flex-wrap:wrap}.btn-row .btn{flex:1}.hidden{display:none!important}
 .result{margin-top:20px}.review-box{white-space:pre-wrap;border:1px solid #cbd8f5;background:#f8faff;padding:16px;border-radius:14px;line-height:1.65;font-size:14px}.notice{font-size:12px;color:var(--muted);line-height:1.5;margin:12px 0}.feedback{margin-top:16px;padding:16px;border:1px solid #fedf89;background:#fffcf5;border-radius:14px}.feedback h3{margin:0 0 6px;font-size:15px}.success{color:var(--green);font-size:13px;font-weight:700;margin-top:10px}.footer{text-align:center;color:var(--muted);font-size:12px;line-height:1.6;margin:22px 0 0}.footer a{color:#1849a9}
 @media(max-width:540px){.grid{grid-template-columns:1fr;gap:0}.field.full{grid-column:auto}.btn-row{flex-direction:column}.star{width:44px;height:44px}.wrap{padding-top:18px}}
+
+.google-review-section{padding:16px;border:1px solid #cbd8f5;background:#f8faff;border-radius:16px;margin-bottom:18px}
+.google-review-section h2{font-size:18px}
+@media(max-width:540px){
+  .google-review-section{padding:14px;margin-bottom:16px}
+  .google-review-section .btn{width:100%;min-height:52px}
+}
 </style>
 </head>
 <body>
@@ -80,16 +87,21 @@
   </section>
 
   <section id="result" class="card result hidden" aria-live="polite">
+    <section id="googleReviewSection" class="google-review-section">
+      <div class="step"><div class="step-num">★</div><div><h2>Review G-TEC Education on Google</h2><p>Your honest feedback helps other learners make informed choices.</p></div></div>
+      <a id="googleLink" class="btn primary" href="https://g.page/r/CRdUwSeCMq0OEAI/review" target="_blank" rel="noopener noreferrer" style="width:100%">Go to G-TEC Google Review ↗</a>
+      <p class="notice">You can open Google at any time. Please choose your own star rating and post only a review that reflects your genuine experience.</p>
+    </section>
+
     <div class="step"><div class="step-num">03</div><div><h2>Your personalized review</h2><p>Your draft uses the correct G-TEC Education and course name capitalization. Edit it so every detail matches your real experience.</p></div></div>
     <div id="reviewText" class="review-box"></div>
     <div class="btn-row" style="margin-top:14px">
       <button id="copyBtn" class="btn secondary" type="button">Copy review</button>
-      <a id="googleLink" class="btn primary" href="https://g.page/r/CRdUwSeCMq0OEAI/review" target="_blank" rel="noopener noreferrer">Copy review & open Google ↗</a>
     </div>
-    <p class="notice">The review text is copied to your clipboard when supported, and Google opens in a new tab. Paste the text into Google, choose your own star rating, and submit only if the review reflects your genuine experience. Google may ask you to sign in.</p>
+    <p class="notice">Copy the draft if you wish, then paste it into Google and choose your own star rating. The Google review section is shown above for easy access. Google may ask you to sign in.</p>
     <div id="privateFeedback" class="feedback hidden">
       <h3>Let’s make your experience better.</h3>
-      <p style="font-size:13px;line-height:1.5;margin:0 0 12px">If something didn’t meet your expectations, tell our team so we can work to resolve it. Tap Send feedback to G-TEC to open WhatsApp with your message ready to send. The Google review option remains available below.</p>
+      <p style="font-size:13px;line-height:1.5;margin:0 0 12px">If something didn’t meet your expectations, tell our team so we can work to resolve it. Tap Send feedback to G-TEC to open WhatsApp with your message ready to send. The Google review section is shown above. You can also send private feedback to G-TEC below.</p>
       <label for="improvement">Private feedback (optional)</label>
       <textarea id="improvement" maxlength="1000" placeholder="Tell us what we could do better."></textarea>
       <button id="sendFeedback" class="btn secondary" type="button" style="margin-top:10px;width:100%">Send feedback to G-TEC</button>
