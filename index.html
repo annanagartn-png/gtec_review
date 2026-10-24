@@ -89,10 +89,10 @@
     <p class="notice">The review text is copied to your clipboard when supported, and Google opens in a new tab. Paste the text into Google, choose your own star rating, and submit only if the review reflects your genuine experience. Google may ask you to sign in.</p>
     <div id="privateFeedback" class="feedback hidden">
       <h3>We'd also like to learn what we can improve.</h3>
-      <p style="font-size:13px;line-height:1.5;margin:0 0 12px">If something didn't meet your expectations, you can share more detail with our team. You can still leave a Google review if you wish.</p>
+      <p style="font-size:13px;line-height:1.5;margin:0 0 12px">If something didn't meet your expectations, please share feedback with our team first. Tap Send feedback to G-TEC to open WhatsApp with your message ready to send. You can still leave a Google review if you wish.</p>
       <label for="improvement">Private feedback (optional)</label>
       <textarea id="improvement" maxlength="1000" placeholder="Tell us what we could do better."></textarea>
-      <button id="sendFeedback" class="btn secondary" type="button" style="margin-top:10px;width:100%">Send feedback to G-TEC WhatsApp</button>
+      <button id="sendFeedback" class="btn secondary" type="button" style="margin-top:10px;width:100%">Send feedback to G-TEC</button>
       <p class="hint">This opens WhatsApp with your feedback message prefilled. Review it and tap Send in WhatsApp to deliver it to G-TEC.</p>
       <div id="feedbackOutput" class="review-box hidden" style="margin-top:12px"></div>
       <button id="copyFeedback" class="btn ghost hidden" type="button" style="margin-top:10px;width:100%">Copy feedback message</button>
@@ -201,6 +201,11 @@ function createReview() {
   document.getElementById('result').classList.remove('hidden');
   document.getElementById('privateFeedback').classList.toggle('hidden', rating > 3);
   document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'});
+  if (rating <= 3) {
+    // Put the feedback CTA first on mobile and bring it into view.
+    const feedback = document.getElementById('privateFeedback');
+    feedback.scrollIntoView({behavior:'smooth', block:'start'});
+  }
 }
 document.getElementById('generateBtn').addEventListener('click', createReview);
 form.addEventListener('submit', e => { e.preventDefault(); createReview(); });
